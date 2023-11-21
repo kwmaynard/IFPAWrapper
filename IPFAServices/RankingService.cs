@@ -1,0 +1,34 @@
+﻿namespace IPFAServices
+{
+    using IPFAServices.PlayerModels;
+
+    /// <summary>
+    /// Retrieve data about the WPPR rankings from the IPFA API.
+    /// </summary>
+    /// <see cref="https://www.ifpapinball.com/api/documentation/rankings/"/>
+    public class RankingService : ServiceBase, IRankingService
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RankingService"/> class.
+        /// </summary>
+        /// <param name="apiKey">Key needed to access API</param>
+        /// <param name="baseUri">The root of the API's url.</param>
+        public RankingService(string apiKey, string baseUri)
+            : base(apiKey, baseUri)
+        {
+        }
+
+        /// <summary>
+        /// Get the WPPR rankings.
+        /// </summary>
+        /// <param name="startPos">Start at a specific point in the list. Default is 1.</param>
+        /// <param name="count">Number of records to return. Default is 50.</param>
+        /// <param name="sortOrder">Order the results. Options: points, rating, eff_pct. Default is points.</param>
+        /// <returns>A list of rankings.</returns>
+        public RankingsRoot GetRanking(int startPos = 1, int count = 50, string sortOrder = "points")
+        {
+            var requestUri = this.BuildUri("rankings", $"&start_pos={startPos}&count={count}&order={sortOrder}");
+            return this.GenericGet<RankingsRoot>(requestUri);
+        }
+    }
+}
