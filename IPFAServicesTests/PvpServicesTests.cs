@@ -12,7 +12,7 @@ namespace IPFAServicesTests
         [SetUp]
         public void Setup()
         {
-            apiKey = "2533965fe7182ffd4153b6124a20c386";
+            apiKey = "{apikey}";
             baseUrl = "https://api.ifpapinball.com/v1";
             service = new PvpService(apiKey, baseUrl);
         }
