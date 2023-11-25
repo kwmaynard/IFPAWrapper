@@ -17,7 +17,7 @@ namespace IFPAServicesTests
         [SetUp]
         public void Setup()
         {
-            apiKey = "{apiKey}";
+            apiKey = "2533965fe7182ffd4153b6124a20c386";
             baseUrl = "https://api.ifpapinball.com/v1";
             calendarService = new CalendarService(apiKey, baseUrl);
             playerService = new PlayerService(apiKey, baseUrl);
