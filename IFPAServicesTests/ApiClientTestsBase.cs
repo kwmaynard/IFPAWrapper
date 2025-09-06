@@ -3,7 +3,7 @@ namespace IFPAServicesTests
     using IFPAServices;
     using NUnit.Framework;
 
-    public class ApiClientTestsBase
+    public abstract class ApiClientTestsBase
     {
         protected string apiKey;
         protected string baseUrl;
