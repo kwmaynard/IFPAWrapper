@@ -12,7 +12,7 @@ namespace IFPAServices
     /// Get data from the calendar from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/calendar/"/>
-    public interface ICalendarService
+    public interface ICalendarApiClient
     {
         /////// <summary>
         /////// Get a list of current calendar entries.

@@ -12,14 +12,14 @@ namespace IFPAServices
     /// Returns back information regarding the tournaments played between two players from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/playervsplayer/"/>
-    public class PvpService : ServiceBase, IPvpService
+    public class PvpApiClient : APIClientBase, IPvpApiClient
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PvpService"/> class.
+        /// Initializes a new instance of the <see cref="PvpApiClient"/> class.
         /// </summary>
         /// <param name="apiKey">Key needed to access API.</param>
         /// <param name="baseUri">The root of the API's url.</param>
-        public PvpService(string apiKey, string baseUri)
+        public PvpApiClient(string apiKey, string baseUri)
             : base(apiKey, baseUri)
         {
         }

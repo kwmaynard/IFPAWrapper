@@ -12,14 +12,14 @@ namespace IFPAServices
     /// Retrieves player data from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/player/"/>
-    public class PlayerService : ServiceBase, IPlayerService
+    public class PlayerApiClient : APIClientBase, IPlayerApiClient
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PlayerService"/> class.
+        /// Initializes a new instance of the <see cref="PlayerApiClient"/> class.
         /// </summary>
         /// <param name="apiKey">Key needed to access API.</param>
         /// <param name="baseUri">The root of the API's url.</param>
-        public PlayerService(string apiKey, string baseUri)
+        public PlayerApiClient(string apiKey, string baseUri)
             : base(apiKey, baseUri)
         {
         }

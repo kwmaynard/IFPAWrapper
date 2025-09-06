@@ -3,12 +3,12 @@
     using IFPAServices;
     using NUnit.Framework;
 
-    public class RankingServiceTests : ServiceTestsBase
+    public class RankingApiClientTests : ApiClientTestsBase
     {
         [Test]
-        public void RankingService_GetRanking()
+        public void RankingApiClient_GetRanking()
         {
-            var result = rankingService.GetRanking();
+            var result = rankingApiClient.GetRanking();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -18,13 +18,13 @@
         }
 
         [Test]
-        public void RankingService_GetRanking_BadKey()
+        public void RankingApiClient_GetRanking_BadKey()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            rankingService = new RankingService(apiKey, baseUrl);
+            rankingApiClient = new RankingApiClient(apiKey, baseUrl);
 
-            var result = rankingService.GetRanking();
+            var result = rankingApiClient.GetRanking();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -34,13 +34,13 @@
         }
 
         [Test]
-        public void RankingService_GetRanking_BadKey_BadUrl()
+        public void RankingApiClient_GetRanking_BadKey_BadUrl()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            rankingService = new RankingService(apiKey, baseUrl);
+            rankingApiClient = new RankingApiClient(apiKey, baseUrl);
 
-            var result = rankingService.GetRanking();
+            var result = rankingApiClient.GetRanking();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);

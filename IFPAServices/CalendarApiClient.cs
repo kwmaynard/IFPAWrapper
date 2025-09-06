@@ -6,21 +6,20 @@
 
 namespace IFPAServices
 {
-    using System.Text.Encodings.Web;
     using IFPAServices.CalendarModels;
 
     /// <summary>
     /// Retrieves player data from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/calendar/"/>
-    public class CalendarService : ServiceBase, ICalendarService
+    public class CalendarApiClient : APIClientBase, ICalendarApiClient
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CalendarService"/> class.
+        /// Initializes a new instance of the <see cref="CalendarApiClient"/> class.
         /// </summary>
         /// <param name="apiKey">Key needed to access API.</param>
         /// <param name="baseUri">The root of the API's url.</param>
-        public CalendarService(string apiKey, string baseUri)
+        public CalendarApiClient(string apiKey, string baseUri)
             : base(apiKey, baseUri)
         {
         }

@@ -1,0 +1,5 @@
+.DS_Store
+IFPAServices/bin/
+IFPAServices/obj/
+IFPAServicesTests/bin/
+IFPAServicesTests/obj/

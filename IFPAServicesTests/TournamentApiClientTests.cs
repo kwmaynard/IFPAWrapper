@@ -3,167 +3,167 @@ namespace IFPAServicesTests
     using IFPAServices;
     using NUnit.Framework;
 
-    public class TournamentServiceTests : ServiceTestsBase
+    public class TournamentApiClientTests : ApiClientTestsBase
     {
         [Test]
-        public void TournamentServiceTests_GetTournament_0()
+        public void TournamentApiClient_GetTournament_0()
         {
             var tournamentId = 0;
 
-            var result = tournamentService.GetTournament(tournamentId);
+            var result = tournamentApiClient.GetTournament(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournament_0_BadKey()
+        public void TournamentApiClient_GetTournament_0_BadKey()
         {
             var tournamentId = 0;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournament(tournamentId);
+            var result = tournamentApiClient.GetTournament(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournament_0_BadUrl()
+        public void TournamentApiClient_GetTournament_0_BadUrl()
         {
             var tournamentId = 0;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournament(tournamentId);
+            var result = tournamentApiClient.GetTournament(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournament_64056()
+        public void TournamentApiClient_GetTournament_64056()
         {
             var tournamentId = 64056;
 
-            var result = tournamentService.GetTournament(tournamentId);
+            var result = tournamentApiClient.GetTournament(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Not.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournament_64056_BadKey()
+        public void TournamentApiClient_GetTournament_64056_BadKey()
         {
             var tournamentId = 64056;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournament(tournamentId);
+            var result = tournamentApiClient.GetTournament(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournament_64056_BadUrl()
+        public void TournamentApiClient_GetTournament_64056_BadUrl()
         {
             var tournamentId = 64056;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournament(tournamentId);
+            var result = tournamentApiClient.GetTournament(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentResults_0()
+        public void TournamentApiClient_GetTournamentResults_0()
         {
             var tournamentId = 0;
 
-            var result = tournamentService.GetTournamentResults(tournamentId);
+            var result = tournamentApiClient.GetTournamentResults(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentResults_0_BadKey()
+        public void TournamentApiClient_GetTournamentResults_0_BadKey()
         {
             var tournamentId = 0;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentResults(tournamentId);
+            var result = tournamentApiClient.GetTournamentResults(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentResults_0_BadUrl()
+        public void TournamentApiClient_GetTournamentResults_0_BadUrl()
         {
             var tournamentId = 0;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentResults(tournamentId);
+            var result = tournamentApiClient.GetTournamentResults(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentResults_64056()
+        public void TournamentApiClient_GetTournamentResults_64056()
         {
             var tournamentId = 64056;
 
-            var result = tournamentService.GetTournamentResults(tournamentId);
+            var result = tournamentApiClient.GetTournamentResults(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Not.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentResults_64056_BadKey()
+        public void TournamentApiClient_GetTournamentResults_64056_BadKey()
         {
             var tournamentId = 64056;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentResults(tournamentId);
+            var result = tournamentApiClient.GetTournamentResults(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentResults_64056_BadUrl()
+        public void TournamentApiClient_GetTournamentResults_64056_BadUrl()
         {
             var tournamentId = 64056;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentResults(tournamentId);
+            var result = tournamentApiClient.GetTournamentResults(tournamentId);
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Tournament, Is.Null);
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentList_50_10()
+        public void TournamentApiClient_GetTournamentList_50_10()
         {
             var start = 50;
             var count = 10;
 
-            var result = tournamentService.GetTournamentList(start, count);
+            var result = tournamentApiClient.GetTournamentList(start, count);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -173,16 +173,16 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentList_50_10_BadKey()
+        public void TournamentApiClient_GetTournamentList_50_10_BadKey()
         {
             var start = 50;
             var count = 10;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentList(start, count);
+            var result = tournamentApiClient.GetTournamentList(start, count);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -192,16 +192,16 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentList_50_10_BadUrl()
+        public void TournamentApiClient_GetTournamentList_50_10_BadUrl()
         {
             var start = 50;
             var count = 10;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentList(start, count);
+            var result = tournamentApiClient.GetTournamentList(start, count);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -211,11 +211,11 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_silverball()
+        public void TournamentApiClient_GetTournamentSearch_silverball()
         {
             var partialName = "silverball";
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -224,15 +224,15 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_silverball_BadKey()
+        public void TournamentApiClient_GetTournamentSearch_silverball_BadKey()
         {
             var partialName = "silverball";
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -241,15 +241,15 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_silverball_BadUrl()
+        public void TournamentApiClient_GetTournamentSearch_silverball_BadUrl()
         {
             var partialName = "silverball";
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -258,11 +258,11 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_gibberish()
+        public void TournamentApiClient_GetTournamentSearch_gibberish()
         {
             var partialName = "gibberish";
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -271,15 +271,15 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_gibberish_BadKey()
+        public void TournamentApiClient_GetTournamentSearch_gibberish_BadKey()
         {
             var partialName = "gibberish";
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -288,15 +288,15 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_gibberish_BadUrl()
+        public void TournamentApiClient_GetTournamentSearch_gibberish_BadUrl()
         {
             var partialName = "gibberish";
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -305,11 +305,11 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_empty()
+        public void TournamentApiClient_GetTournamentSearch_empty()
         {
             var partialName = string.Empty;
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -318,15 +318,15 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_empty_BadKey()
+        public void TournamentApiClient_GetTournamentSearch_empty_BadKey()
         {
             var partialName = string.Empty;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -335,15 +335,15 @@ namespace IFPAServicesTests
         }
 
         [Test]
-        public void TournamentServiceTests_GetTournamentSearch_empty_BadUrl()
+        public void TournamentApiClient_GetTournamentSearch_empty_BadUrl()
         {
             var partialName = string.Empty;
 
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            tournamentService = new TournamentService(apiKey, baseUrl);
+            tournamentApiClient = new TournamentApiClient(apiKey, baseUrl);
 
-            var result = tournamentService.GetTournamentSearch(partialName);
+            var result = tournamentApiClient.GetTournamentSearch(partialName);
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);

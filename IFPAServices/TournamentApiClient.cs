@@ -12,14 +12,14 @@ namespace IFPAServices
     /// Retrieve data about tournaments from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/tournament/"/>
-    public class TournamentService : ServiceBase, ITournamentService
+    public class TournamentApiClient : APIClientBase, ITournamentApiClient
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TournamentService"/> class.
+        /// Initializes a new instance of the <see cref="TournamentApiClient"/> class.
         /// </summary>
         /// <param name="apiKey">Key needed to access API.</param>
         /// <param name="baseUri">The root of the API's url.</param>
-        public TournamentService(string apiKey, string baseUri)
+        public TournamentApiClient(string apiKey, string baseUri)
             : base(apiKey, baseUri)
         {
         }

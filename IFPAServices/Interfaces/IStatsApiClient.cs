@@ -12,7 +12,7 @@ namespace IFPAServices
     /// Allows various stats to be retrieved from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/statistics/"/>
-    public interface IStatsService
+    public interface IStatsApiClient
     {
         /// <summary>
         /// List of players who have earned the most points this year.

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="ServiceBase.cs" company="Valued Relationships, Inc.">
+// <copyright file="APIClientBase.cs" company="Valued Relationships, Inc.">
 // Copyright © Valued Relationships, Inc. 2023.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -13,7 +13,7 @@ namespace IFPAServices
     /// Abstract class for retrieving data from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/"/>
-    public abstract class ServiceBase
+    public abstract class APIClientBase
     {
         /// <summary>
         /// Key needed to access API.
@@ -26,11 +26,11 @@ namespace IFPAServices
         private readonly System.Uri baseUrl;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ServiceBase"/> class.
+    /// Initializes a new instance of the <see cref="APIClientBase"/> class.
         /// </summary>
         /// <param name="apiKey">Key needed to access API.</param>
         /// <param name="baseUrl">The root of the API's url.</param>
-        protected ServiceBase(string apiKey, string baseUrl)
+    protected APIClientBase(string apiKey, string baseUrl)
         {
             this.apiKey = apiKey;
             this.baseUrl = new System.Uri(baseUrl);
@@ -50,13 +50,13 @@ namespace IFPAServices
         /// <summary>
         /// Generic get request to the API.
         /// </summary>
-        /// <typeparam name="TRootObject">Type of the object returned.</typeparam>
+        /// <typeparam name="TResponseObject">Type of the object returned.</typeparam>
         /// <param name="requestUri">URL of the request.</param>
         /// <returns>A deserialized result object.</returns>
-        protected TRootObject GenericGet<TRootObject>(string requestUri)
-            where TRootObject : new()
+        protected TResponseObject GenericGet<TResponseObject>(string requestUri)
+            where TResponseObject : new()
         {
-            var emptyRootObject = new TRootObject();
+            var emptyRootObject = new TResponseObject();
             using (var httpClient = new HttpClient())
             {
                 var response = httpClient.GetAsync(requestUri).Result;
@@ -68,7 +68,7 @@ namespace IFPAServices
                 var json = response.Content.ReadAsStringAsync().Result;
                 try
                 {
-                    var rootObject = JsonConvert.DeserializeObject<TRootObject>(json);
+                    var rootObject = JsonConvert.DeserializeObject<TResponseObject>(json);
                     ////if (rootObject == null)
                     ////{
                     ////    return emptyRootObject;

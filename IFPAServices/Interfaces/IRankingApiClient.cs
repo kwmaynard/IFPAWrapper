@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="RankingService.cs" company="Valued Relationships, Inc.">
+// <copyright file="IRankingService.cs" company="Valued Relationships, Inc.">
 // Copyright © Valued Relationships, Inc. 2023.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -12,18 +12,8 @@ namespace IFPAServices
     /// Retrieve data about the WPPR rankings from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/rankings/"/>
-    public class RankingService : ServiceBase, IRankingService
+    public interface IRankingApiClient
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RankingService"/> class.
-        /// </summary>
-        /// <param name="apiKey">Key needed to access API.</param>
-        /// <param name="baseUri">The root of the API's url.</param>
-        public RankingService(string apiKey, string baseUri)
-            : base(apiKey, baseUri)
-        {
-        }
-
         /// <summary>
         /// Get the WPPR rankings.
         /// </summary>
@@ -31,10 +21,6 @@ namespace IFPAServices
         /// <param name="count">Number of records to return. Default is 50.</param>
         /// <param name="sortOrder">Order the results. Options: points, rating, eff_pct. Default is points.</param>
         /// <returns>A list of rankings.</returns>
-        public RankingsRoot GetRanking(int startPos = 1, int count = 50, string sortOrder = "points")
-        {
-            var requestUri = this.BuildUri("rankings", $"&start_pos={startPos}&count={count}&order={sortOrder}");
-            return this.GenericGet<RankingsRoot>(requestUri);
-        }
+        RankingsRoot GetRanking(int startPos = 1, int count = 50, string sortOrder = "points");
     }
 }

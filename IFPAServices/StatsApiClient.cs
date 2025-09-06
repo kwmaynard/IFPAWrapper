@@ -12,14 +12,14 @@ namespace IFPAServices
     /// Allows various stats to be retrieved from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/statistics/"/>
-    public class StatsService : ServiceBase, IStatsService
+    public class StatsApiClient : APIClientBase, IStatsApiClient
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatsService"/> class.
+        /// Initializes a new instance of the <see cref="StatsApiClient"/> class.
         /// </summary>
         /// <param name="apiKey">Key needed to access API.</param>
         /// <param name="baseUri">The root of the API's url.</param>
-        public StatsService(string apiKey, string baseUri)
+        public StatsApiClient(string apiKey, string baseUri)
             : base(apiKey, baseUri)
         {
         }

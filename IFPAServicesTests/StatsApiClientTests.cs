@@ -3,12 +3,12 @@
     using IFPAServices;
     using NUnit.Framework;
 
-    public class StatsServiceTests : ServiceTestsBase
+    public class StatsApiClientTests : ApiClientTestsBase
     {
         [Test]
-        public void StatsService_GetStatsPointsThisYear()
+        public void StatsApiClient_GetStatsPointsThisYear()
         {
-            var result = statsService.GetStatsPointsThisYear();
+            var result = statsApiClient.GetStatsPointsThisYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -18,13 +18,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPointsThisYear_BadKey()
+        public void StatsApiClient_GetStatsPointsThisYear_BadKey()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsPointsThisYear();
+            var result = statsApiClient.GetStatsPointsThisYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -34,13 +34,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPointsThisYear_BadKey_BadUrl()
+        public void StatsApiClient_GetStatsPointsThisYear_BadKey_BadUrl()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsPointsThisYear();
+            var result = statsApiClient.GetStatsPointsThisYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -50,9 +50,9 @@
         }
 
         [Test]
-        public void StatsService_GetStatsMostEvents()
+        public void StatsApiClient_GetStatsMostEvents()
         {
-            var result = statsService.GetStatsMostEvents();
+            var result = statsApiClient.GetStatsMostEvents();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -62,13 +62,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsMostEvents_BadKey()
+        public void StatsApiClient_GetStatsMostEvents_BadKey()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsMostEvents();
+            var result = statsApiClient.GetStatsMostEvents();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -78,13 +78,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsMostEvents_BadKey_BadUrl()
+        public void StatsApiClient_GetStatsMostEvents_BadKey_BadUrl()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsMostEvents();
+            var result = statsApiClient.GetStatsMostEvents();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -94,9 +94,9 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPlayersByCountry()
+        public void StatsApiClient_GetStatsPlayersByCountry()
         {
-            var result = statsService.GetStatsPlayersByCountry();
+            var result = statsApiClient.GetStatsPlayersByCountry();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -106,13 +106,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPlayersByCountry_BadKey()
+        public void StatsApiClient_GetStatsPlayersByCountry_BadKey()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsPlayersByCountry();
+            var result = statsApiClient.GetStatsPlayersByCountry();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -122,13 +122,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPlayersByCountry_BadKey_BadUrl()
+        public void StatsApiClient_GetStatsPlayersByCountry_BadKey_BadUrl()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsPlayersByCountry();
+            var result = statsApiClient.GetStatsPlayersByCountry();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -138,9 +138,9 @@
         }
 
         [Test]
-        public void StatsService_GetStatsEventsPerYear()
+        public void StatsApiClient_GetStatsEventsPerYear()
         {
-            var result = statsService.GetStatsEventsPerYear();
+            var result = statsApiClient.GetStatsEventsPerYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -150,13 +150,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsEventsPerYear_BadKey()
+        public void StatsApiClient_GetStatsEventsPerYear_BadKey()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsEventsPerYear();
+            var result = statsApiClient.GetStatsEventsPerYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -166,13 +166,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsEventsPerYear_BadKey_BadUrl()
+        public void StatsApiClient_GetStatsEventsPerYear_BadKey_BadUrl()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsEventsPerYear();
+            var result = statsApiClient.GetStatsEventsPerYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -182,9 +182,9 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPlayersByYear()
+        public void StatsApiClient_GetStatsPlayersByYear()
         {
-            var result = statsService.GetStatsPlayersByYear();
+            var result = statsApiClient.GetStatsPlayersByYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -194,13 +194,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPlayersByYear_BadKey()
+        public void StatsApiClient_GetStatsPlayersByYear_BadKey()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsPlayersByYear();
+            var result = statsApiClient.GetStatsPlayersByYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -210,13 +210,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsPlayersByYear_BadKey_BadUrl()
+        public void StatsApiClient_GetStatsPlayersByYear_BadKey_BadUrl()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsPlayersByYear();
+            var result = statsApiClient.GetStatsPlayersByYear();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -226,9 +226,9 @@
         }
 
         [Test]
-        public void StatsService_GetStatsBiggestMovers()
+        public void StatsApiClient_GetStatsBiggestMovers()
         {
-            var result = statsService.GetStatsBiggestMovers();
+            var result = statsApiClient.GetStatsBiggestMovers();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -238,13 +238,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsBiggestMovers_BadKey()
+        public void StatsApiClient_GetStatsBiggestMovers_BadKey()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v1";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsBiggestMovers();
+            var result = statsApiClient.GetStatsBiggestMovers();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);
@@ -254,13 +254,13 @@
         }
 
         [Test]
-        public void StatsService_GetStatsBiggestMovers_BadKey_BadUrl()
+        public void StatsApiClient_GetStatsBiggestMovers_BadKey_BadUrl()
         {
             apiKey = "gibberish";
             baseUrl = "https://api.ifpapinball.com/v0";
-            statsService = new StatsService(apiKey, baseUrl);
+            statsApiClient = new StatsApiClient(apiKey, baseUrl);
 
-            var result = statsService.GetStatsBiggestMovers();
+            var result = statsApiClient.GetStatsBiggestMovers();
             Assert.Multiple(() =>
             {
                 Assert.That(result, Is.Not.Null);

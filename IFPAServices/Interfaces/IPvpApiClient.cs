@@ -12,7 +12,7 @@ namespace IFPAServices
     /// Returns back information regarding the tournaments played between two players from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/playervsplayer/"/>
-    public interface IPvpService
+    public interface IPvpApiClient
     {
         /// <summary>
         /// Get player and tournament information.

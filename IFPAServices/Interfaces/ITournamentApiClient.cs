@@ -12,7 +12,7 @@ namespace IFPAServices
     /// Retrieve data about tournaments from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/tournament/"/>
-    public interface ITournamentService
+    public interface ITournamentApiClient
     {
         /// <summary>
         /// Get information about a tournament.

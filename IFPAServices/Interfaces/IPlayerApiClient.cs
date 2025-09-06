@@ -13,7 +13,7 @@ namespace IFPAServices
     /// Retrieves player data from the IFPA API.
     /// </summary>
     /// <see href="https://www.ifpapinball.com/api/documentation/player/"/>
-    public interface IPlayerService
+    public interface IPlayerApiClient
     {
         /// <summary>
         /// Use this enpoints to retrieve data about players.
