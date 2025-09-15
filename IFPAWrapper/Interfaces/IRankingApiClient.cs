@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
-    using IFPAServices.PlayerModels;
+    using IFPAWrapper.PlayerModels;
 
     /// <summary>
     /// Retrieve data about the WPPR rankings from the IFPA API.

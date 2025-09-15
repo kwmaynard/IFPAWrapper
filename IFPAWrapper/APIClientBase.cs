@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
     using System.Net.Http;
     using Newtonsoft.Json;

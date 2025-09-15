@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices.TournamentModels
+namespace IFPAWrapper.TournamentModels
 {
     using Newtonsoft.Json;
 

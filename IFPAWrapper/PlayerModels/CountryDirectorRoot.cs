@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices.PlayerModels
+namespace IFPAWrapper.PlayerModels
 {
     using System.Collections.Generic;
     using Newtonsoft.Json;

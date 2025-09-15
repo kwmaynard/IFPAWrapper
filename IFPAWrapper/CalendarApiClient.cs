@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
-    using IFPAServices.CalendarModels;
+    using IFPAWrapper.CalendarModels;
 
     /// <summary>
     /// Retrieves player data from the IFPA API.

@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
-    using IFPAServices.StatModels;
+    using IFPAWrapper.StatModels;
 
     /// <summary>
     /// Allows various stats to be retrieved from the IFPA API.

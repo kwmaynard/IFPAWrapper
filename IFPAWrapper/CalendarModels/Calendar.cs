@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices.CalendarModels
+namespace IFPAWrapper.CalendarModels
 {
     using Newtonsoft.Json;
 

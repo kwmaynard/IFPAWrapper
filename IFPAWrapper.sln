@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IFPAServices", "IFPAServices\IFPAServices.csproj", "{6FB38B8E-F847-4A61-BCCD-72C004FF3729}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IFPAWrapper", "IFPAWrapper\IFPAWrapper.csproj", "{6FB38B8E-F847-4A61-BCCD-72C004FF3729}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IFPAServicesTests", "IFPAServicesTests\IFPAServicesTests.csproj", "{1A730B65-3C74-4BD2-8E7A-570C1549F33C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IFPAWrapperTests", "IFPAWrapperTests\IFPAWrapperTests.csproj", "{1A730B65-3C74-4BD2-8E7A-570C1549F33C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchPlayWrapper", "MatchPlayWrapper\MatchPlayWrapper.csproj", "{D4893E3D-1E5C-49E7-8123-1184E4007B8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1A730B65-3C74-4BD2-8E7A-570C1549F33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A730B65-3C74-4BD2-8E7A-570C1549F33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A730B65-3C74-4BD2-8E7A-570C1549F33C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4893E3D-1E5C-49E7-8123-1184E4007B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4893E3D-1E5C-49E7-8123-1184E4007B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4893E3D-1E5C-49E7-8123-1184E4007B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4893E3D-1E5C-49E7-8123-1184E4007B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

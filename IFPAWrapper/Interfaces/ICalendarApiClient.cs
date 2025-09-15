@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
-    using IFPAServices.CalendarModels;
+    using IFPAWrapper.CalendarModels;
 
     /// <summary>
     /// Get data from the calendar from the IFPA API.

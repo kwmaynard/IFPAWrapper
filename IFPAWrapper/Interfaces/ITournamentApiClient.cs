@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
-    using IFPAServices.TournamentModels;
+    using IFPAWrapper.TournamentModels;
 
     /// <summary>
     /// Retrieve data about tournaments from the IFPA API.

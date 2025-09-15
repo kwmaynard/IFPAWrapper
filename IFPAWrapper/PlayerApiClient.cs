@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
-    using IFPAServices.PlayerModels;
+    using IFPAWrapper.PlayerModels;
 
     /// <summary>
     /// Retrieves player data from the IFPA API.

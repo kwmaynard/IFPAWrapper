@@ -1,6 +1,6 @@
-﻿namespace IFPAServicesTests
+﻿namespace IFPAWrapperTests
 {
-    using IFPAServices;
+    using IFPAWrapper;
     using NUnit.Framework;
 
     public class CalendarApiClientTests : ApiClientTestsBase

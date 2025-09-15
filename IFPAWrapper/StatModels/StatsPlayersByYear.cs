@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices.StatModels
+namespace IFPAWrapper.StatModels
 {
     using Newtonsoft.Json;
 

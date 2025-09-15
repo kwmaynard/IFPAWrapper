@@ -4,9 +4,9 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace IFPAServices
+namespace IFPAWrapper
 {
-    using IFPAServices.PlayerModels;
+    using IFPAWrapper.PlayerModels;
 
     /// <summary>
     /// Returns back information regarding the tournaments played between two players from the IFPA API.
