@@ -313,6 +313,19 @@ namespace MatchPlayApiWrapper
         }
 
         /// <summary>
+        /// Retrieves all games for the active or latest round in a tournament.
+        /// </summary>
+        /// <param name="tournamentId">The tournament ID.</param>
+        /// <returns>A list of Game POCOs.</returns>
+        public async Task<List<Models.Game>> GetActiveGamesAsync(int tournamentId)
+        {
+            var response = await _httpClient.GetAsync($"/api/tournaments/{tournamentId}/games?round=activeOrLatest");
+            response.EnsureSuccessStatusCode();
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<List<Models.Game>>(json) ?? new List<Models.Game>();
+        }
+
+        /// <summary>
         /// Retrieves games as CSV for a tournament.
         /// </summary>
         /// <param name="tournamentId">The tournament ID.</param>
@@ -345,7 +358,7 @@ namespace MatchPlayApiWrapper
         /// <returns>A list of Round POCOs.</returns>
         public async Task<List<Models.Round>> GetRoundsAsync(int tournamentId)
         {
-            var response = await _httpClient.GetAsync($"/api/tournaments/{tournamentId}/rounds");
+            var response = await _httpClient.GetAsync($"/api/tournaments/{tournamentId}/rounds?cacheEligible=true");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<List<Models.Round>>(json) ?? new List<Models.Round>();
