@@ -1,19 +1,23 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class PlayerRankHistoryResponse
     {
-        [JsonPropertyName("player_id")]
+        [JsonProperty("player_id")]
         public int PlayerId { get; set; }
-        [JsonPropertyName("system")]
+
+        [JsonProperty("system")]
         public string System { get; set; }
-        [JsonPropertyName("active_flag")]
+
+        [JsonProperty("active_flag")]
         public bool ActiveFlag { get; set; }
-        [JsonPropertyName("rank_history")]
+
+        [JsonProperty("rank_history")]
         public List<PlayerRankHistory> RankHistory { get; set; }
-        [JsonPropertyName("rating_history")]
+
+        [JsonProperty("rating_history")]
         public List<PlayerRatingHistory> RatingHistory { get; set; }
     }
 }

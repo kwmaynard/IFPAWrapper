@@ -1,20 +1,25 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class TournamentSearchFilter
     {
-        [JsonPropertyName("name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonPropertyName("country")]
+
+        [JsonProperty("country")]
         public string Country { get; set; }
-        [JsonPropertyName("stateprov")]
+
+        [JsonProperty("stateprov")]
         public string StateProv { get; set; }
-        [JsonPropertyName("city")]
+
+        [JsonProperty("city")]
         public string City { get; set; }
-        [JsonPropertyName("director_id")]
+
+        [JsonProperty("director_id")]
         public int? DirectorId { get; set; }
-        [JsonPropertyName("year")]
+
+        [JsonProperty("year")]
         public int? Year { get; set; }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace MatchPlayApiWrapper.Models
@@ -10,8 +9,10 @@ namespace MatchPlayApiWrapper.Models
     {
         /// <summary>Gets or sets the list of position counts for players.</summary>
         public List<PositionCount> PositionCounts { get; set; }
+
         /// <summary>Gets or sets the list of arena counts for players.</summary>
         public List<ArenaCount> ArenaCounts { get; set; }
+
         /// <summary>Gets or sets the list of opponent counts for players.</summary>
         public List<OpponentCount> OpponentCounts { get; set; }
     }
@@ -23,6 +24,7 @@ namespace MatchPlayApiWrapper.Models
     {
         /// <summary>Gets or sets the player ID.</summary>
         public int PlayerId { get; set; }
+
         /// <summary>Gets or sets the dictionary of position counts (position -> count).</summary>
         public Dictionary<int, int> Positions { get; set; }
     }
@@ -34,6 +36,7 @@ namespace MatchPlayApiWrapper.Models
     {
         /// <summary>Gets or sets the player ID.</summary>
         public int PlayerId { get; set; }
+
         /// <summary>Gets or sets the dictionary of arena counts (arena ID -> count).</summary>
         public Dictionary<int, int> Arenas { get; set; }
     }
@@ -45,6 +48,7 @@ namespace MatchPlayApiWrapper.Models
     {
         /// <summary>Gets or sets the player ID.</summary>
         public int PlayerId { get; set; }
+
         /// <summary>Gets or sets the dictionary of opponent counts (opponent ID -> count).</summary>
         public Dictionary<int, int> Opponents { get; set; }
     }

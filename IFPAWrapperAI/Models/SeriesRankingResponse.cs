@@ -1,17 +1,20 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class SeriesRankingResponse
     {
-        [JsonPropertyName("series_code")]
+        [JsonProperty("series_code")]
         public string SeriesCode { get; set; }
-        [JsonPropertyName("year")]
+
+        [JsonProperty("year")]
         public int Year { get; set; }
-        [JsonPropertyName("count")]
+
+        [JsonProperty("count")]
         public int Count { get; set; }
-        [JsonPropertyName("results")]
+
+        [JsonProperty("results")]
         public List<RankingResult> Results { get; set; }
     }
 }

@@ -1,15 +1,17 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class RegionRankingResponse
     {
-        [JsonPropertyName("region_code")]
+        [JsonProperty("region_code")]
         public string RegionCode { get; set; }
-        [JsonPropertyName("count")]
+
+        [JsonProperty("count")]
         public int Count { get; set; }
-        [JsonPropertyName("results")]
+
+        [JsonProperty("results")]
         public List<RankingResult> Results { get; set; }
     }
 }

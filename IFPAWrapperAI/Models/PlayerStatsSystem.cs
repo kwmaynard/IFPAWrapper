@@ -1,12 +1,13 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class PlayerStatsSystem
     {
-        [JsonPropertyName("MAIN")]
+        [JsonProperty("MAIN")]
         public PlayerStatsDetail Main { get; set; }
-        [JsonPropertyName("WOMEN")]
+
+        [JsonProperty("WOMEN")]
         public PlayerStatsDetail Women { get; set; }
     }
 }

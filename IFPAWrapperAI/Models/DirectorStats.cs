@@ -1,38 +1,52 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class DirectorStats
     {
-        [JsonPropertyName("tournament_count")]
+        [JsonProperty("tournament_count")]
         public int TournamentCount { get; set; }
-        [JsonPropertyName("unique_location_count")]
+
+        [JsonProperty("unique_location_count")]
         public int UniqueLocationCount { get; set; }
-        [JsonPropertyName("women_tournament_count")]
+
+        [JsonProperty("women_tournament_count")]
         public int WomenTournamentCount { get; set; }
-        [JsonPropertyName("league_count")]
+
+        [JsonProperty("league_count")]
         public int LeagueCount { get; set; }
-        [JsonPropertyName("highest_value")]
+
+        [JsonProperty("highest_value")]
         public int HighestValue { get; set; }
-        [JsonPropertyName("average_value")]
+
+        [JsonProperty("average_value")]
         public int AverageValue { get; set; }
-        [JsonPropertyName("total_player_count")]
+
+        [JsonProperty("total_player_count")]
         public int TotalPlayerCount { get; set; }
-        [JsonPropertyName("unique_player_count")]
+
+        [JsonProperty("unique_player_count")]
         public int UniquePlayerCount { get; set; }
-        [JsonPropertyName("first_time_player_count")]
+
+        [JsonProperty("first_time_player_count")]
         public int FirstTimePlayerCount { get; set; }
-        [JsonPropertyName("repeat_player_count")]
+
+        [JsonProperty("repeat_player_count")]
         public int RepeatPlayerCount { get; set; }
-        [JsonPropertyName("largest_event_count")]
+
+        [JsonProperty("largest_event_count")]
         public int LargestEventCount { get; set; }
-        [JsonPropertyName("single_format_count")]
+
+        [JsonProperty("single_format_count")]
         public int SingleFormatCount { get; set; }
-        [JsonPropertyName("multiple_format_count")]
+
+        [JsonProperty("multiple_format_count")]
         public int MultipleFormatCount { get; set; }
-        [JsonPropertyName("unknown_format_count")]
+
+        [JsonProperty("unknown_format_count")]
         public int UnknownFormatCount { get; set; }
-        [JsonPropertyName("formats")]
+
+        [JsonProperty("formats")]
         public DirectorFormat Formats { get; set; }
     }
 }

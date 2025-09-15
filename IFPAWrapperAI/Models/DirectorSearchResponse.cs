@@ -1,20 +1,20 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class DirectorSearchResponse
     {
-            [JsonPropertyName("search_filter")]
-            public DirectorSearchFilter SearchFilter { get; set; }
+        [JsonProperty("search_filter")]
+        public DirectorSearchFilter SearchFilter { get; set; }
 
-            [JsonPropertyName("count")]
-            public int Count { get; set; }
+        [JsonProperty("count")]
+        public int Count { get; set; }
 
-            [JsonPropertyName("total_results")]
-            public int TotalResults { get; set; }
+        [JsonProperty("total_results")]
+        public int TotalResults { get; set; }
 
-            [JsonPropertyName("results")]
-            public List<DirectorSearchResult> Results { get; set; }
+        [JsonProperty("results")]
+        public List<DirectorSearchResult> Results { get; set; }
     }
 }

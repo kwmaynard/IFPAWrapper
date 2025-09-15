@@ -1,13 +1,14 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class SeriesListResponse
     {
-        [JsonPropertyName("count")]
+        [JsonProperty("count")]
         public int Count { get; set; }
-        [JsonPropertyName("results")]
+
+        [JsonProperty("results")]
         public List<SeriesListItem> Results { get; set; }
     }
 }

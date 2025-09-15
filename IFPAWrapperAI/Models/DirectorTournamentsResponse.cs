@@ -1,13 +1,14 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class DirectorTournamentsResponse
     {
-        [JsonPropertyName("director_id")]
+        [JsonProperty("director_id")]
         public int DirectorId { get; set; }
-        [JsonPropertyName("tournaments")]
+
+        [JsonProperty("tournaments")]
         public List<Tournament> Tournaments { get; set; }
     }
 }

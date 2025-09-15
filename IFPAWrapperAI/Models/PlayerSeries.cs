@@ -1,18 +1,22 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class PlayerSeries
     {
-        [JsonPropertyName("series_code")]
+        [JsonProperty("series_code")]
         public string SeriesCode { get; set; }
-        [JsonPropertyName("region_code")]
+
+        [JsonProperty("region_code")]
         public string RegionCode { get; set; }
-        [JsonPropertyName("year")]
+
+        [JsonProperty("year")]
         public int Year { get; set; }
-        [JsonPropertyName("total_points")]
+
+        [JsonProperty("total_points")]
         public double TotalPoints { get; set; }
-        [JsonPropertyName("series_rank")]
+
+        [JsonProperty("series_rank")]
         public int SeriesRank { get; set; }
     }
 }

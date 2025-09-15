@@ -1,12 +1,13 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class PlayerRatingHistory
     {
-        [JsonPropertyName("rating_date")]
+        [JsonProperty("rating_date")]
         public string RatingDate { get; set; }
-        [JsonPropertyName("rating")]
+
+        [JsonProperty("rating")]
         public double Rating { get; set; }
     }
 }

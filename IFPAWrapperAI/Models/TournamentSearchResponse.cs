@@ -1,17 +1,20 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class TournamentSearchResponse
     {
-        [JsonPropertyName("search_filter")]
+        [JsonProperty("search_filter")]
         public TournamentSearchFilter SearchFilter { get; set; }
-        [JsonPropertyName("count")]
+
+        [JsonProperty("count")]
         public int Count { get; set; }
-        [JsonPropertyName("total_results")]
+
+        [JsonProperty("total_results")]
         public int TotalResults { get; set; }
-        [JsonPropertyName("results")]
+
+        [JsonProperty("results")]
         public List<TournamentSearchResult> Results { get; set; }
     }
 }

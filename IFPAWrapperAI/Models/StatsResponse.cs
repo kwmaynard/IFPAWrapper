@@ -1,17 +1,17 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class StatsResponse
     {
-    [JsonPropertyName("system")]
-    public string System { get; set; }
+        [JsonProperty("system")]
+        public string System { get; set; }
 
-    [JsonPropertyName("count")]
-    public int Count { get; set; }
+        [JsonProperty("count")]
+        public int Count { get; set; }
 
-    [JsonPropertyName("results")]
-    public List<StatsResult> Results { get; set; }
+        [JsonProperty("results")]
+        public List<StatsResult> Results { get; set; }
     }
 }

@@ -1,24 +1,31 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class StatsResult
     {
-        [JsonPropertyName("player_id")]
+        [JsonProperty("player_id")]
         public int PlayerId { get; set; }
-        [JsonPropertyName("first_name")]
+
+        [JsonProperty("first_name")]
         public string FirstName { get; set; }
-        [JsonPropertyName("last_name")]
+
+        [JsonProperty("last_name")]
         public string LastName { get; set; }
-        [JsonPropertyName("country_code")]
+
+        [JsonProperty("country_code")]
         public string CountryCode { get; set; }
-        [JsonPropertyName("stateprov")]
+
+        [JsonProperty("stateprov")]
         public string StateProv { get; set; }
-        [JsonPropertyName("city")]
+
+        [JsonProperty("city")]
         public string City { get; set; }
-        [JsonPropertyName("profile_photo_url")]
+
+        [JsonProperty("profile_photo_url")]
         public string ProfilePhotoUrl { get; set; }
-        [JsonPropertyName("stats")]
+
+        [JsonProperty("stats")]
         public PlayerStatsDetail Stats { get; set; }
     }
 }

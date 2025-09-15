@@ -1,17 +1,20 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class PlayerPvpResponse
     {
-        [JsonPropertyName("player_id")]
+        [JsonProperty("player_id")]
         public int PlayerId { get; set; }
-        [JsonPropertyName("total_competitors")]
+
+        [JsonProperty("total_competitors")]
         public int TotalCompetitors { get; set; }
-        [JsonPropertyName("system")]
+
+        [JsonProperty("system")]
         public string System { get; set; }
-        [JsonPropertyName("pvp")]
+
+        [JsonProperty("pvp")]
         public List<PlayerPvpRecord> Pvp { get; set; }
     }
 }

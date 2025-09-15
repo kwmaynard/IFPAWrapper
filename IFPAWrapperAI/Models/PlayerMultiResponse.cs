@@ -1,12 +1,13 @@
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class PlayerMultiResponse
     {
-        [JsonPropertyName("player")]
+        [JsonProperty("player")]
         public List<Player> Players { get; set; }
+
         // ...existing code...
     }
 }

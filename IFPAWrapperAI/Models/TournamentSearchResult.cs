@@ -1,32 +1,43 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class TournamentSearchResult
     {
-        [JsonPropertyName("tournament_id")]
+        [JsonProperty("tournament_id")]
         public int TournamentId { get; set; }
-        [JsonPropertyName("tournament_name")]
+
+        [JsonProperty("tournament_name")]
         public string TournamentName { get; set; }
-        [JsonPropertyName("event_name")]
+
+        [JsonProperty("event_name")]
         public string EventName { get; set; }
-        [JsonPropertyName("event_start_date")]
+
+        [JsonProperty("event_start_date")]
         public string EventStartDate { get; set; }
-        [JsonPropertyName("event_end_date")]
+
+        [JsonProperty("event_end_date")]
         public string EventEndDate { get; set; }
-        [JsonPropertyName("city")]
+
+        [JsonProperty("city")]
         public string City { get; set; }
-        [JsonPropertyName("stateprov")]
+
+        [JsonProperty("stateprov")]
         public string StateProv { get; set; }
-        [JsonPropertyName("country_name")]
+
+        [JsonProperty("country_name")]
         public string CountryName { get; set; }
-        [JsonPropertyName("country_code")]
+
+        [JsonProperty("country_code")]
         public string CountryCode { get; set; }
-        [JsonPropertyName("director_id")]
+
+        [JsonProperty("director_id")]
         public int DirectorId { get; set; }
-        [JsonPropertyName("director_name")]
+
+        [JsonProperty("director_name")]
         public string DirectorName { get; set; }
-        [JsonPropertyName("profile_photo")]
+
+        [JsonProperty("profile_photo")]
         public string ProfilePhoto { get; set; }
     }
 }

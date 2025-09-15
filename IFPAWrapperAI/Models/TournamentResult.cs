@@ -1,25 +1,25 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class TournamentResult
     {
-    [JsonPropertyName("player_id")]
-    public int PlayerId { get; set; }
+        [JsonProperty("player_id")]
+        public int PlayerId { get; set; }
 
-    [JsonPropertyName("first_name")]
-    public string FirstName { get; set; }
+        [JsonProperty("first_name")]
+        public string FirstName { get; set; }
 
-    [JsonPropertyName("last_name")]
-    public string LastName { get; set; }
+        [JsonProperty("last_name")]
+        public string LastName { get; set; }
 
-    [JsonPropertyName("position")]
-    public int Position { get; set; }
+        [JsonProperty("position")]
+        public int Position { get; set; }
 
-    [JsonPropertyName("points")]
-    public double Points { get; set; }
+        [JsonProperty("points")]
+        public double Points { get; set; }
 
-    [JsonPropertyName("profile_photo")]
-    public string ProfilePhoto { get; set; }
+        [JsonProperty("profile_photo")]
+        public string ProfilePhoto { get; set; }
     }
 }

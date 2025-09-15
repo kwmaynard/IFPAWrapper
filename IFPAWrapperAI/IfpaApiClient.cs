@@ -1,7 +1,8 @@
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
+
+using Newtonsoft.Json;
 
 namespace IFPAWrapper
 {
@@ -24,7 +25,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"director/{directorId}");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.Director>(json);
+            return JsonConvert.DeserializeObject<Models.Director>(json);
         }
 
         public async Task<Models.Tournament> GetTournamentAsync(int tournamentId)
@@ -32,7 +33,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"tournament/{tournamentId}");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.Tournament>(json);
+            return JsonConvert.DeserializeObject<Models.Tournament>(json);
         }
 
         public async Task<Models.Player> GetPlayerAsync(int playerId)
@@ -40,7 +41,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"player/{playerId}");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.Player>(json);
+            return JsonConvert.DeserializeObject<Models.Player>(json);
         }
 
         public async Task<Models.PlayerMultiResponse> GetPlayersAsync(string playerIds)
@@ -48,7 +49,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"player?players={playerIds}");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.PlayerMultiResponse>(json);
+            return JsonConvert.DeserializeObject<Models.PlayerMultiResponse>(json);
         }
 
         public async Task<Models.PlayerPvpResponse> GetPlayerPvpAsync(int playerId)
@@ -56,7 +57,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"player/{playerId}/pvp");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.PlayerPvpResponse>(json);
+            return JsonConvert.DeserializeObject<Models.PlayerPvpResponse>(json);
         }
 
         public async Task<Models.PlayerPvpToPlayerResponse> GetPlayerPvpToPlayerAsync(int playerId, int otherPlayerId)
@@ -64,7 +65,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"player/{playerId}/pvp/{otherPlayerId}");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.PlayerPvpToPlayerResponse>(json);
+            return JsonConvert.DeserializeObject<Models.PlayerPvpToPlayerResponse>(json);
         }
 
         public async Task<Models.PlayerRankHistoryResponse> GetPlayerRankHistoryAsync(int playerId)
@@ -72,7 +73,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"player/{playerId}/rank_history");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.PlayerRankHistoryResponse>(json);
+            return JsonConvert.DeserializeObject<Models.PlayerRankHistoryResponse>(json);
         }
 
         public async Task<Models.PlayerResultsResponse> GetPlayerResultsAsync(int playerId, string rankingSystem, string type)
@@ -80,7 +81,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"player/{playerId}/results/{rankingSystem}/{type}");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.PlayerResultsResponse>(json);
+            return JsonConvert.DeserializeObject<Models.PlayerResultsResponse>(json);
         }
 
         public async Task<Models.PlayerSearchResponse> SearchPlayersAsync(string name = null, string country = null, string stateprov = null, string tournament = null, int? tourpos = null)
@@ -94,7 +95,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url.TrimEnd('&'));
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.PlayerSearchResponse>(json);
+            return JsonConvert.DeserializeObject<Models.PlayerSearchResponse>(json);
         }
 
         public async Task<Models.DirectorSearchResponse> SearchDirectorsAsync(string name = null, string country = null, string stateprov = null, string city = null)
@@ -107,7 +108,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url.TrimEnd('&'));
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.DirectorSearchResponse>(json);
+            return JsonConvert.DeserializeObject<Models.DirectorSearchResponse>(json);
         }
 
         public async Task<Models.DirectorTournamentsResponse> GetDirectorTournamentsAsync(int directorId)
@@ -115,7 +116,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"director/{directorId}/tournaments");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.DirectorTournamentsResponse>(json);
+            return JsonConvert.DeserializeObject<Models.DirectorTournamentsResponse>(json);
         }
 
         public async Task<Models.RankingResponse> GetGlobalRankingsAsync(string system = "MAIN", int? page = null)
@@ -125,7 +126,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.RankingResponse>(json);
+            return JsonConvert.DeserializeObject<Models.RankingResponse>(json);
         }
 
         public async Task<Models.CountryRankingResponse> GetCountryRankingsAsync(string countryCode, string system = "MAIN", int? page = null)
@@ -135,7 +136,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.CountryRankingResponse>(json);
+            return JsonConvert.DeserializeObject<Models.CountryRankingResponse>(json);
         }
 
         public async Task<Models.StateRankingResponse> GetStateRankingsAsync(string countryCode, string stateProv, string system = "MAIN", int? page = null)
@@ -145,7 +146,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.StateRankingResponse>(json);
+            return JsonConvert.DeserializeObject<Models.StateRankingResponse>(json);
         }
 
         public async Task<Models.RegionRankingResponse> GetRegionRankingsAsync(string regionCode, string system = "MAIN", int? page = null)
@@ -155,7 +156,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.RegionRankingResponse>(json);
+            return JsonConvert.DeserializeObject<Models.RegionRankingResponse>(json);
         }
 
         public async Task<Models.SeriesRankingResponse> GetSeriesRankingsAsync(string seriesCode, int year, string system = "MAIN", int? page = null)
@@ -165,7 +166,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.SeriesRankingResponse>(json);
+            return JsonConvert.DeserializeObject<Models.SeriesRankingResponse>(json);
         }
 
         public async Task<Models.SeriesListResponse> GetSeriesListAsync(string regionCode = null, int? year = null)
@@ -176,7 +177,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url.TrimEnd('&'));
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.SeriesListResponse>(json);
+            return JsonConvert.DeserializeObject<Models.SeriesListResponse>(json);
         }
 
         public async Task<Models.SeriesResponse> GetSeriesAsync(string seriesCode, int year)
@@ -184,7 +185,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"series/{seriesCode}/{year}");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.SeriesResponse>(json);
+            return JsonConvert.DeserializeObject<Models.SeriesResponse>(json);
         }
 
         public async Task<Models.StatsResponse> GetGlobalStatsAsync(string system = "MAIN", int? page = null)
@@ -194,7 +195,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.StatsResponse>(json);
+            return JsonConvert.DeserializeObject<Models.StatsResponse>(json);
         }
 
         public async Task<Models.StatsResponse> GetCountryStatsAsync(string countryCode, string system = "MAIN", int? page = null)
@@ -204,7 +205,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.StatsResponse>(json);
+            return JsonConvert.DeserializeObject<Models.StatsResponse>(json);
         }
 
         public async Task<Models.StatsResponse> GetStateStatsAsync(string countryCode, string stateProv, string system = "MAIN", int? page = null)
@@ -214,7 +215,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.StatsResponse>(json);
+            return JsonConvert.DeserializeObject<Models.StatsResponse>(json);
         }
 
         public async Task<Models.StatsResponse> GetRegionStatsAsync(string regionCode, string system = "MAIN", int? page = null)
@@ -224,7 +225,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.StatsResponse>(json);
+            return JsonConvert.DeserializeObject<Models.StatsResponse>(json);
         }
 
         public async Task<Models.TournamentSearchResponse> SearchTournamentsAsync(string name = null, string country = null, string stateprov = null, string city = null, int? directorId = null, int? year = null)
@@ -239,7 +240,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync(url.TrimEnd('&'));
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.TournamentSearchResponse>(json);
+            return JsonConvert.DeserializeObject<Models.TournamentSearchResponse>(json);
         }
 
         public async Task<Models.TournamentResultsResponse> GetTournamentResultsAsync(int tournamentId)
@@ -247,7 +248,7 @@ namespace IFPAWrapper
             var response = await _httpClient.GetAsync($"tournament/{tournamentId}/results");
             response.EnsureSuccessStatusCode();
             var json = await response.Content.ReadAsStringAsync();
-            return System.Text.Json.JsonSerializer.Deserialize<Models.TournamentResultsResponse>(json);
+            return JsonConvert.DeserializeObject<Models.TournamentResultsResponse>(json);
         }
     }
 }

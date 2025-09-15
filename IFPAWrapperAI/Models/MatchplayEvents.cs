@@ -1,16 +1,16 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class MatchplayEvents
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonPropertyName("rating")]
+        [JsonProperty("rating")]
         public double Rating { get; set; }
 
-        [JsonPropertyName("rank")]
+        [JsonProperty("rank")]
         public int Rank { get; set; }
     }
 }

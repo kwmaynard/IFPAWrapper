@@ -1,16 +1,19 @@
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace IFPAWrapper.Models
 {
     public class SeriesListItem
     {
-        [JsonPropertyName("series_code")]
+        [JsonProperty("series_code")]
         public string SeriesCode { get; set; }
-        [JsonPropertyName("name")]
+
+        [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonPropertyName("region_code")]
+
+        [JsonProperty("region_code")]
         public string RegionCode { get; set; }
-        [JsonPropertyName("year")]
+
+        [JsonProperty("year")]
         public int Year { get; set; }
     }
 }
