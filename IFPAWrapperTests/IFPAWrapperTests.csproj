@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IFPAWrapper\IFPAWrapper.csproj" />
+    <ProjectReference Include="..\IFPAWrapper\IFPAWrapper-old.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,7 @@ namespace MatchPlayApiWrapper
     /// <summary>
     /// Interface for MatchPlayApiClient methods.
     /// </summary>
+    /// <seealso href="https://api.matchplay.com/docs">MatchPlay API Documentation</seealso>
     public interface IMatchPlayApiClient
     {
         /// <summary>
