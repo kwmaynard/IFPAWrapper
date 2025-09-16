@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace MatchPlayApiWrapper.Models
 {
     /// <summary>
-    /// Represents a game in a tournament.
+    /// Represents a game in the Amazing Race tournament.
     /// </summary>
-    public class Game
+    public class AmazingRaceGame
     {
         /// <summary>Gets or sets the game ID.</summary>
         public int GameId { get; set; }
@@ -17,8 +17,8 @@ namespace MatchPlayApiWrapper.Models
         /// <summary>Gets or sets the tournament ID.</summary>
         public int TournamentId { get; set; }
 
-        /// <summary>Gets or sets the arena ID.</summary>
-        public int ArenaId { get; set; }
+        /// <summary>Gets or sets the arena ID (nullable).</summary>
+        public int? ArenaId { get; set; }
 
         /// <summary>Gets or sets the bank ID (nullable).</summary>
         public int? BankId { get; set; }
@@ -26,8 +26,8 @@ namespace MatchPlayApiWrapper.Models
         /// <summary>Gets or sets the game index (nullable).</summary>
         public int? Index { get; set; }
 
-        /// <summary>Gets or sets the set number.</summary>
-        public int Set { get; set; }
+        /// <summary>Gets or sets the set number (nullable).</summary>
+        public int? Set { get; set; }
 
         /// <summary>Gets or sets the player ID with advantage (nullable).</summary>
         public int? PlayerIdAdvantage { get; set; }
@@ -63,7 +63,7 @@ namespace MatchPlayApiWrapper.Models
         public List<int?> ResultScores { get; set; }
 
         /// <summary>Gets or sets the arena details.</summary>
-        public GameArena Arena { get; set; }
+        public AmazingRaceArena Arena { get; set; }
 
         /// <summary>Gets or sets the list of suggestions.</summary>
         public List<string> Suggestions { get; set; }
